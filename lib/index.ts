@@ -1,7 +1,7 @@
-import MyWorker from "./worker?worker";
-
 export function runWorker() {
-  const worker = new MyWorker();
+  const worker = new Worker(new URL("./worker", import.meta.url), {
+    type: "module",
+  });
 }
 
 runWorker();

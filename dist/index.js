@@ -1,15 +1,13 @@
-function e(r) {
-  return new Worker(
+function e() {
+  new Worker(new URL(
+    /* @vite-ignore */
     "" + new URL("assets/worker-B_ao5ERl.js", import.meta.url).href,
-    {
-      name: r == null ? void 0 : r.name
-    }
-  );
+    import.meta.url
+  ), {
+    type: "module"
+  });
 }
-function n() {
-  new e();
-}
-n();
+e();
 export {
-  n as runWorker
+  e as runWorker
 };

@@ -1,3 +1,3 @@
-export declare function runWorker(): void;
+export declare function runWorker(): Promise<void>;
 
 export { }

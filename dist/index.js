@@ -7,7 +7,6 @@ function e() {
     type: "module"
   });
 }
-e();
 export {
   e as runWorker
 };

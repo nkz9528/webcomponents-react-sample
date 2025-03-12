@@ -3,5 +3,3 @@ export function runWorker() {
     type: "module",
   });
 }
-
-runWorker();

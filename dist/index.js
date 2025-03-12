@@ -9270,7 +9270,7 @@ async function Nr() {
   }), e = new On(), n = new In(e);
   await r.connect(n);
   const { tools: t } = await r.listTools();
-  console.log(t);
+  return console.log(t), t;
 }
 export {
   Nr as runWorker

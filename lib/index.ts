@@ -12,6 +12,7 @@ export async function runWorker() {
   await client.connect(trasport);
   const { tools } = await client.listTools();
   console.log(tools);
+  return tools;
 }
 
 // runWorker();

@@ -16,5 +16,8 @@ export default defineConfig({
       formats: ["es"],
     },
   },
+  worker: {
+    format: "es",
+  },
   plugins: [dts({ rollupTypes: true })],
 });

@@ -13,11 +13,9 @@ export default defineConfig({
       name: "WorkerLib",
       // 適切な拡張子が追加されます
       fileName: "index",
-      formats: ["es"],
+      formats: ["cjs"],
     },
   },
-  worker: {
-    format: "es",
-  },
+
   plugins: [dts({ rollupTypes: true })],
 });

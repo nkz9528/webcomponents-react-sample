@@ -1,5 +1,5 @@
+import MyWorker from "./worker?worker&inline";
+
 export function runWorker() {
-  const worker = new Worker(new URL("./worker", import.meta.url), {
-    type: "module",
-  });
+  const worker = new MyWorker();
 }

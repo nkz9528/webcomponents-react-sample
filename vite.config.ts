@@ -9,7 +9,7 @@ export default defineConfig({
   base: "./",
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/index.ts"),
+      entry: resolve(__dirname, "lib/index.tsx"),
       name: "WorkerLib",
       // 適切な拡張子が追加されます
       fileName: "index",

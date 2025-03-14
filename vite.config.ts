@@ -13,7 +13,6 @@ export default defineConfig({
       name: "WorkerLib",
       // 適切な拡張子が追加されます
       fileName: "index",
-      formats: ["es"],
     },
   },
   worker: {

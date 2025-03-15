@@ -3,8 +3,6 @@ import React from "react";
 import { createRoot, Root } from "react-dom/client";
 import { App } from "./App";
 
-import "./styles.css";
-
 // Web Component
 class React18WebComponent extends HTMLElement {
   private shadow: ShadowRoot;

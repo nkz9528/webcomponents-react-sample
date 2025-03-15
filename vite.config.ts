@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   build: {
     rollupOptions: {
-      input: resolve(__dirname, "src/index.tsx"),
+      input: resolve(__dirname, "src/main.tsx"),
       output: {
         entryFileNames: "assets/[name].js",
       },

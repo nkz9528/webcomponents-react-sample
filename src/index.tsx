@@ -1,9 +1,17 @@
-// react18-web-component.tsx
-import React from "react";
 import { createRoot, Root } from "react-dom/client";
-import { App } from "./App";
+import {
+  RouterProvider,
+  createMemoryHistory,
+  createRouter,
+} from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
 
 import styles from "../index.css?inline";
+
+const memoryHistory = createMemoryHistory({
+  initialEntries: ["/"], // Pass your initial url
+});
+const router = createRouter({ routeTree, history: memoryHistory });
 
 // Web Component
 class React18WebComponent extends HTMLElement {
@@ -28,7 +36,8 @@ class React18WebComponent extends HTMLElement {
 
     // React 18のcreateRootを使用
     this.root = createRoot(mountPoint);
-    this.root.render(<App />);
+
+    this.root.render(<RouterProvider router={router} />);
   }
 
   disconnectedCallback() {

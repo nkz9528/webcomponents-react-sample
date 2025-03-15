@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "src/index.tsx", "src/main.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022", "WebWorker"],
     "types": ["vite/client"],

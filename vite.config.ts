@@ -1,9 +1,7 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -13,7 +11,6 @@ export default defineConfig({
       input: resolve(__dirname, "lib/index.tsx"),
       output: {
         entryFileNames: "assets/[name].js",
-        assetFileNames: "assets/[name].[ext]",
       },
     },
   },
@@ -26,5 +23,5 @@ export default defineConfig({
   //     formats: ["es"],
   //   },
   // },
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
 });

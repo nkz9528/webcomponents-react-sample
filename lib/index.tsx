@@ -3,6 +3,8 @@ import React from "react";
 import { createRoot, Root } from "react-dom/client";
 import { App } from "./App";
 
+import styles from "../index.css?inline";
+
 // Web Component
 class React18WebComponent extends HTMLElement {
   private shadow: ShadowRoot;
@@ -15,6 +17,10 @@ class React18WebComponent extends HTMLElement {
 
   connectedCallback() {
     console.log("React18WebComponent要素がDOMに追加されました");
+
+    const styleSheet = new CSSStyleSheet();
+    styleSheet.replaceSync(styles);
+    this.shadow.adoptedStyleSheets.push(styleSheet);
 
     // Reactコンポーネントをマウントするためのコンテナ
     const mountPoint = document.createElement("div");

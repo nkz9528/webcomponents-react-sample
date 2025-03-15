@@ -7,28 +7,14 @@ import react from "@vitejs/plugin-react";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  // base: "./",
-  build: {
-    lib: {
-      entry: resolve(__dirname, "lib/index.ts"),
-      name: "WorkerLib",
-      // 適切な拡張子が追加されます
-      fileName: "index",
-      formats: ["es"],
-    },
-    rollupOptions: {
-      // external: ["react", "react-dom"],
-      // output: {
-      //   globals: {
-      //     react: "react",
-      //     reactDom: "react-dom",
-      //     "react/jsx-runtime": "react/jsx-runtime",
-      //   },
-      // },
-    },
-  },
-  worker: {
-    format: "es",
-  },
-  plugins: [react(), dts({ rollupTypes: true })],
+  // build: {
+  //   lib: {
+  //     entry: resolve(__dirname, "lib/index.tsx"),
+  //     name: "WorkerLib",
+  //     // 適切な拡張子が追加されます
+  //     fileName: "index",
+  //     formats: ["es"],
+  //   },
+  // },
+  plugins: [react()],
 });

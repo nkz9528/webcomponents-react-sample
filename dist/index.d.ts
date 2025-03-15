@@ -1,6 +1,8 @@
-import { JSX } from 'react/jsx-runtime';
-
-declare const Counter: () => JSX.Element;
-export default Counter;
+export declare class SimpleComponent extends HTMLElement {
+    private shadow;
+    constructor();
+    connectedCallback(): void;
+    private render;
+}
 
 export { }

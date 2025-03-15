@@ -1,19 +1,26 @@
-var r = Object.defineProperty;
-var t = (e, o, n) => o in e ? r(e, o, { enumerable: !0, configurable: !0, writable: !0, value: n }) : e[o] = n;
-var s = (e, o, n) => t(e, typeof o != "symbol" ? o + "" : o, n);
-class a extends HTMLElement {
+// simple-component.ts
+export class SimpleComponent extends HTMLElement {
+  // Shadow DOMを使用
+  private shadow: ShadowRoot;
+
   constructor() {
     super();
-    // Shadow DOMを使用
-    s(this, "shadow");
-    this.shadow = this.attachShadow({ mode: "open" }), this.render();
+
+    // Shadow DOMを作成
+    this.shadow = this.attachShadow({ mode: "open" });
+
+    // レンダリング
+    this.render();
   }
+
   // コンポーネントがDOMに追加されたときに呼ばれるライフサイクルメソッド
   connectedCallback() {
     console.log("SimpleComponent要素がDOMに追加されました");
   }
+
   // レンダリングメソッド
-  render() {
+  private render() {
+    // Shadow DOMの内容を設定
     this.shadow.innerHTML = `
       <style>
         .container {
@@ -37,7 +44,6 @@ class a extends HTMLElement {
     `;
   }
 }
-customElements.define("simple-component", a);
-export {
-  a as SimpleComponent
-};
+
+// コンポーネントを登録
+customElements.define("simple-component", SimpleComponent);

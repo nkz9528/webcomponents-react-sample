@@ -1,21 +1,9 @@
 // react18-web-component.tsx
 import React from "react";
 import { createRoot, Root } from "react-dom/client";
+import { App } from "./App";
 
-// Reactコンポーネント
-const SimpleReactComponent: React.FC = () => {
-  const [count, setCount] = React.useState(0);
-
-  return (
-    <div className="container">
-      <h1>Hello, World!</h1>
-      <p>This is rendered with React 18 inside a Web Component</p>
-      <button onClick={() => setCount((prev) => prev + 1)}>
-        Count: {count}
-      </button>
-    </div>
-  );
-};
+import "./styles.css";
 
 // Web Component
 class React18WebComponent extends HTMLElement {
@@ -36,7 +24,7 @@ class React18WebComponent extends HTMLElement {
 
     // React 18のcreateRootを使用
     this.root = createRoot(mountPoint);
-    this.root.render(<SimpleReactComponent />);
+    this.root.render(<App />);
   }
 
   disconnectedCallback() {

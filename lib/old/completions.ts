@@ -1,4 +1,4 @@
-import { WorkerClientTransport } from "./mcp/client";
+import { WorkerClientTransport } from "./old/mcp/client";
 import MyWorker from "./worker?worker&inline";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 

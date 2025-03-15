@@ -18,44 +18,13 @@ const SimpleReactComponent: React.FC = () => {
 };
 
 // Web Component
-export class React18WebComponent extends HTMLElement {
+class React18WebComponent extends HTMLElement {
   private shadow: ShadowRoot;
   private root: Root | null = null;
 
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: "open" });
-
-    // スタイルを追加
-    const style = document.createElement("style");
-    style.textContent = `
-      .container {
-        font-family: 'Arial', sans-serif;
-        color: #333;
-        background-color: #f8f8f8;
-        padding: 16px;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        margin: 0;
-        font-size: 1.5em;
-        color: #0066cc;
-      }
-      button {
-        margin-top: 10px;
-        padding: 8px 16px;
-        background-color: #0066cc;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: #0055aa;
-      }
-    `;
-    this.shadow.appendChild(style);
   }
 
   connectedCallback() {

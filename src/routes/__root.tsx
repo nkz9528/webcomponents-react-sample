@@ -1,24 +1,17 @@
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
-import { css } from "../../styled-system/css";
 
 export const Route = createRootRoute({
   component: () => (
-    <>
-      <div>
+    <div>
+      <div className="px-4 py-2 flex gap-4">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
       </div>
       <hr />
-      <main
-        className={css({
-          fontWeight: "bold",
-          background: "aliceblue",
-          padding: 8,
-        })}
-      >
+      <main className="p-4">
         <Outlet />
       </main>
       {/* <TanStackRouterDevtools /> */}
-    </>
+    </div>
   ),
 });

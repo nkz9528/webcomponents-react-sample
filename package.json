@@ -2,26 +2,12 @@
   "name": "worker-lib",
   "version": "1.0.0",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
-  },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
-    "prepare": "panda codegen"
+    "build": "vite build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
-    "@remix-run/node": "^2.16.0",
-    "@remix-run/react": "^2.16.0",
-    "@remix-run/serve": "^2.16.0",
     "@tailwindcss/vite": "^4.0.14",
     "@tanstack/react-router": "^1.114.17",
     "@vitejs/plugin-react": "^4.3.4",
@@ -40,15 +26,12 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.53.1",
-    "@remix-run/dev": "^2.16.0",
     "@tanstack/react-router-devtools": "^1.114.21",
     "@tanstack/router-plugin": "^1.114.17",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "vite": "^6.2.1",
-    "vite-plugin-dts": "^4.5.3"
+    "vite": "^6.2.1"
   },
   "author": "",
   "license": "ISC",

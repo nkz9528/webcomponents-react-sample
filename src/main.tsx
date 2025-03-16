@@ -13,6 +13,8 @@ const memoryHistory = createMemoryHistory({
 });
 const router = createRouter({ routeTree, history: memoryHistory });
 
+export let callback: ((value: unknown) => string) | undefined;
+
 class RootWebComponent extends HTMLElement {
   private shadow: ShadowRoot;
   private root: Root | null = null;
@@ -26,11 +28,9 @@ class RootWebComponent extends HTMLElement {
     const styleSheet = new CSSStyleSheet();
     styleSheet.replaceSync(styles);
     this.shadow.adoptedStyleSheets.push(styleSheet);
-
     const mountPoint = document.createElement("div");
     this.shadow.appendChild(mountPoint);
     this.root = createRoot(mountPoint);
-    this.root.render(<RouterProvider router={router} />);
   }
 
   disconnectedCallback() {
@@ -39,6 +39,20 @@ class RootWebComponent extends HTMLElement {
       this.root = null;
     }
   }
+  public renderApp(c: (value: unknown) => string) {
+    callback = c;
+    if (this.root) {
+      this.root.render(<RouterProvider router={router} />);
+    }
+  }
+}
+
+interface RenderAppParams {
+  callbacks: Callbacks;
+}
+
+interface Callbacks {
+  readonly onMessage: () => void;
 }
 
 customElements.define("simple-component", RootWebComponent);
